@@ -1,34 +1,37 @@
-<ion-header [translucent]="true">
+<!-- <ion-header [translucent]="true">
   <ion-toolbar color="warning" >
-    <ion-title style="color:#3880ff;font-size:xx-large;padding-bottom:4%" >
-      <img style="width:18%;padding-top:6%;padding-right:4%;"src="././assets/logo.jpeg"/>मिशन मिट्टी बचाओ
-    </ion-title>
+        <img src="././assets/A1.jpg" style="width:100%"/>
+
+       
+   
   </ion-toolbar>
-</ion-header>
+</ion-header> -->
 
 <ion-content >
+  <!-- <ion-button (click)="date()" expand="block">aad spaces</ion-button> -->
+  <img src="././assets/A1.jpg" style="width:100%"/>
+
  <ion-grid>
    <ion-row>
      <ion-col size-xs=12 size-s=12 size-md=12>
-       <ion-img style="width:100%" src=""></ion-img>
       <ion-list>
         <ion-item class="custom-item">
-          <ion-label position="stacked">नाम</ion-label>
-          <ion-input [(ngModel)]="form.name"  inputmode = "text" placeholder = "आपका नाम (पूरा नाम)" ></ion-input>
+          <ion-label position="stacked" style="font-size: x-large;color:gray;">नाम</ion-label>
+          <ion-input [(ngModel)]="form.name" style="font-size:small;text-transform:capitalize" inputmode = "text" placeholder = "आपका नाम (पूरा नाम)" ></ion-input>
         </ion-item>
         <ion-item class="custom-item">
-          <ion-label position="stacked" >मोबाइल नंबर</ion-label>
-          <ion-input [(ngModel)]="form.mobile"  inputmode= "tel" minlength=10 maxlength=10 type="tel" placeholder = "आपका मोबाइल नम्बर (10 अंकीय नम्बर)" ></ion-input>
+          <ion-label position="stacked"style="font-size: x-large;color:gray;" >मोबाइल नंबर</ion-label>
+          <ion-input [(ngModel)]="form.mobile" style="font-size:small;" inputmode= "tel" minlength=10 maxlength=10 type="tel" placeholder = "आपका मोबाइल नम्बर (10 अंकीय नम्बर)" ></ion-input>
         </ion-item>
         <ion-item class="custom-item">
-          <ion-label position="stacked" >आधार नंबर</ion-label>
-          <ion-input [(ngModel)]="form.aadhar" inputmode= "numeric"  minlength=12 maxlength=12  placeholder = "आपका आधार नम्बर (12 अंकीय आधार नम्बर)" ></ion-input>
+          <ion-label position="stacked" style="font-size: x-large;color:gray;">आधार नंबर</ion-label>
+          <ion-input [(ngModel)]="form.aadhar" style="font-size:small;" inputmode= "numeric"  minlength=12 maxlength=12  placeholder = "आपका आधार नम्बर (12 अंकीय आधार नम्बर)" ></ion-input>
         </ion-item>
        
         <ion-item class="custom-item">
-          <ion-label position="stacked" >आप कौन सी फसल उगाते हैं?</ion-label>
+          <ion-label position="stacked" style="font-size:small;" style="font-size: x-large;color:gray;">आप कौन सी फसल उगाते हैं?</ion-label>
           <ionic-selectable
-              
+          style="font-size:small;"   
           item-content 
           [(ngModel)]="crop"
           [items]="crops"
@@ -40,46 +43,54 @@
         </ion-item>
        
         <ion-item class="custom-item">
-          <ion-label position="stacked" >पता (घर का पता)</ion-label>
-          <ion-input [(ngModel)]="form.address"  type="text"  placeholder = "आपका पता" ></ion-input>
+          <ion-label position="stacked" style="font-size: x-large;color:gray;">पता (पता/घर के पास प्रसिद्ध स्थान, गांव, तालुका)</ion-label>
+          <ion-input style="font-size:small;" [(ngModel)]="form.address"  type="text"  placeholder = "आपका पता" ></ion-input>
+        </ion-item>
+        <!-- <ion-item style="color: #3880ff;">
+          <ion-badge slot="start" color="warning" style="font-size: large;">नोट:</ion-badge>
+          <p style="font-size: small;">यह कुछ मामलों में हो सकता है कि गांव कुछ पिन कोड में मौजूद नहीं है। उस स्थिति में, पता फ़ील्ड में पूरा पता लिखें। पता लिखने का सबसे अच्छा तरीका है: घर, गाँव, तालुका, जिला, पिन कोड</p>
         </ion-item>
         <ion-item class="custom-item">
-          <ion-label position="stacked" >पिन कोड (अपना पिन कोड जमा करें)</ion-label>
-          <ion-input [(ngModel)]="form.pin"  inputmode= "numeric"  minlength=6 maxlength=6 placeholder = "आपका पिन कोड" ></ion-input>
+          <ion-label position="stacked" style="font-size: x-large;color:gray;">पिन कोड</ion-label>
+          <ion-input style="font-size:small;" [(ngModel)]="form.pin"  inputmode= "numeric"  minlength=6 maxlength=6 placeholder = "आपका पिन कोड" ></ion-input>
         </ion-item>
-        <ion-button (click)="getLocation()" expand="block">पिन कोड सबमिट करें</ion-button>
-        <ion-item class="custom-item" *ngIf="pin_correct">
-          <ion-label position="stacked" >जिला</ion-label>
+        <ion-button (click)="getLocation()" size="small" expand="block">पिन कोड सबमिट करें</ion-button> -->
+        <!-- below *ngIf="pin_correct" -->
+        <ion-item class="custom-item">
+          <ion-label position="stacked" style="font-size: x-large;color:gray;">जिला</ion-label>
           <ionic-selectable
               
-         
+          style="font-size:small;"
           item-content 
           [(ngModel)]="district"
           [items]="districts2"
           itemValueField="id"
           itemTextField="val"
+          (onChange)="portChange($event)"
           >
 
         </ionic-selectable>      
         </ion-item>
-        <ion-item class="custom-item" *ngIf="pin_correct">
-          <ion-label position="stacked" >तालुका</ion-label>
+        <ion-item class="custom-item">
+          <ion-label position="stacked" style="font-size: x-large;color:gray;">तालुका</ion-label>
           <ionic-selectable
               
-         
+          style="font-size:small;"
           item-content 
           [(ngModel)]="taluka"
           [items]="talukas2"
           itemValueField="id"
           itemTextField="val"
+          (onChange)="portChange2($event)"
+
           >
 
         </ionic-selectable>      
         </ion-item>
-        <ion-item class="custom-item" *ngIf="pin_correct">
-          <ion-label position="stacked" >गाँव</ion-label>
+        <ion-item class="custom-item">
+          <ion-label position="stacked" style="font-size: x-large;color:gray;">गाँव</ion-label>
           <ionic-selectable
-              
+          style="font-size:small;"
          
           item-content 
           [(ngModel)]="village"
@@ -91,8 +102,8 @@
         </ionic-selectable>      
         </ion-item>
 
-        <ion-button *ngIf="pin_correct" expand="block" (click)="takePicture()"><ion-icon name="camera" style="padding-right: 5%;"></ion-icon>सबूत के लिए अपने खेत की छवि अपलोड करें</ion-button>
-        <ion-button *ngIf="pin_correct" expand="block" color="success" (click)="submit()">फार्म जमा करें</ion-button>
+        <ion-button size="small" expand="block" (click)="takePicture()"><ion-icon name="camera" style="padding-right: 5%;"></ion-icon>सबूत के लिए अपने खेत का ७/१२ अपलोड करें</ion-button>
+        <ion-button size="medium" expand="block" style="margin-top:5%;"color="success" (click)="submit()">फार्म जमा करें</ion-button>
 
 
         

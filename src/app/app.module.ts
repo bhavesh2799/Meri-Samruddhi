@@ -7,7 +7,7 @@ import { IonicModule, IonicRouteStrategy } from '@ionic/angular';
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { IonicSelectableModule } from 'ionic-selectable';
-import { HttpClientModule,  } from  '@angular/common/http';
+import { HttpClientModule  } from  '@angular/common/http';
 
 
 import {AngularFireModule} from '@angular/fire';
